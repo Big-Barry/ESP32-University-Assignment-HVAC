@@ -24,7 +24,8 @@ void TaskReadSensors(void *pvParameters) {
         float hum = dht.readHumidity();
         bool anomaly = false;
 
-        if (isnan(temp) || isnan(hum) || temp < -20.0 || temp > 80.0) {
+        // DHT22 valid temperature range: -40°C to 80°C
+        if (isnan(temp) || isnan(hum) || temp < -40.0 || temp > 80.0) { //This is used to filter out anomolies outside of the temperature rnage of the DHT22
             Serial.println("ERROR: Sensor Anomaly Detected!");
             anomaly = true;
         }
