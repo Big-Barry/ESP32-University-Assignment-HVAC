@@ -1,0 +1,5 @@
+{
+    "sketch": "sketch.ino",
+    "output": "./build",
+    "board": "esp32:esp32:esp32"
+}
